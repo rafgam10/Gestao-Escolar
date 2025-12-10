@@ -2,14 +2,13 @@ from flask import Flask
 
 from src.settings.config import Config
 from src.settings.extensions import db
+from src.settings.extensions import jwt
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 db.init_app(app=app)
-
-# Import Models
-
+jwt.init_app(app=app)
 
 # Registrar as rotas:
 
